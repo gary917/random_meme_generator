@@ -5,18 +5,41 @@
 </head>
 <body>
 
-  <h1>This is a Heading</h1>
-  <p>This is a paragraph.</p>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.360.0.min.js"></script>
+
 
   <center>
-    <button type="button" onclick="loadDoc()">Change Content</button>
+    <button onclick="newImage()">
+      Change Content
+    </button>
   </center>
-
   <center>
     <img id = "meme" src={{object_link}} align="center" heigh='700' width='700'>
   </center>
 
-<script type="text/javascript" src=../javascript/newImage.js''></script>
+  <script>
+  function newImage() {
+      // import entire SDK
+      var AWS = require('aws-sdk');
+      // import AWS object without services
+      var AWS = require('aws-sdk/global');
+      // import individual service
+      var S3 = require('aws-sdk/clients/s3');
+      var s3 = new AWS.S3();
 
+      var params = {
+        Bucket: 'meme-generator-source'
+      }
+
+      s3.listObjects(params, function(err,data){
+        if (err) console.log(err,err.stack);
+        else console.log(data);
+      }
+
+      //document.getElementById("meme").src = "https://s3-ap-southeast-2.amazonaws.com/meme-generator-source/09n7cl1zzdy11.jpg";
+  }
+  </script>
+
+  
 </body>
 </html>
