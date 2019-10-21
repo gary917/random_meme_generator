@@ -16,7 +16,7 @@ configparser==3.5.0
 constant==0.0.4
 constants==0.6.0
 docutils==0.14
-ecdsa==0.13
+ecdsa==0.13.3
 enum34==1.1.6
 esptool==2.5.0
 Flask==1.0.2
