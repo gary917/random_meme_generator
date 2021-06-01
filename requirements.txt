@@ -90,7 +90,7 @@ semantic-version==2.6.0
 singledispatch==3.4.0.3
 six==1.11.0
 tornado==5.0.1
-urllib3==1.23
+urllib3==1.26.5
 vboxapi==1.0
 waitress==1.1.0
 Werkzeug==0.14.1
